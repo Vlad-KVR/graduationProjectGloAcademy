@@ -1,5 +1,6 @@
 'use strict';
 
-import test from './modules/test';
 
-test();
+import togglePopUp from './modules/togglePopUp';
+
+togglePopUp();
