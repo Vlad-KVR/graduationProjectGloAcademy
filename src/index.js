@@ -1,11 +1,19 @@
 'use strict';
 
 
-import togglePopUpCall from './modules/togglePopUpCall';
+
+import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import validationForm from './modules/validationForm';
 
-togglePopUpCall();
+
+togglePopUp(document.querySelectorAll('.call-btn'),
+            document.querySelector('.popup-call'));
+
+togglePopUp(document.querySelectorAll('.discount-btn'),
+            document.querySelector('.popup-discount'),
+            document.querySelector('.sentence'));
+
 sendForm();
 validationForm();
 
