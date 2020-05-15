@@ -439,9 +439,9 @@
             <div class="col-lg-6 col-md-6">
                 <p class="question">Остались вопросы?</p>
                 <p>Введите свой вопрос и в течении 15 минут я свяжусь с вами!</p>
-                <form class="director-form">
+                <form class="director-form" name="director-form">
                     <input type="text" name="user_quest" placeholder="Введите свой вопрос" required>
-                    <button class="button director-btn consultation-btn" name="submit" type="submit">Получить
+                    <button class="consultation-btn button director-btn " name="submit" type="submit">Получить
                         консультацию
                     </button>
                 </form>
@@ -547,7 +547,7 @@
     <div class="popup-dialog">
         <div class="popup-content">
             <!-- <div class="popup-form"> -->
-            <form class="capture-form text-center">
+            <form class="capture-form text-center" data-form2="director-form">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_13">Как к вам обращаться</label>
                 <input type="text" id="name_13" name="user_name" placeholder="Ваше имя" required>

@@ -14,6 +14,10 @@ togglePopUp(document.querySelectorAll('.discount-btn'),
             document.querySelector('.popup-discount'),
             document.querySelector('.sentence'));
 
+togglePopUp(document.querySelector('.consultation-btn'),
+            document.querySelector('.popup-consultation'));
+
+
 sendForm();
 validationForm();
 

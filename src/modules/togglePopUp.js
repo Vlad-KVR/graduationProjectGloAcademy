@@ -15,7 +15,6 @@ const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
     
             //сама анимация
             const animateContent = () => {
-                console.log(popupContent.style.marginLeft);
                 //если окно в середине или справа то
                 //прекращаем анимацию
                 if (popupContent.style.marginLeft === '0%' ||
@@ -81,7 +80,11 @@ const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
         } else {
             //если обертку не передали,
             // то вешаем событие на все кнопки
-            callBtn.forEach(item => item.addEventListener('click', toggle));
+            if (callBtn.length) {
+                callBtn.forEach(item => item.addEventListener('click', toggle));
+            } else {
+                callBtn.addEventListener('click', toggle)
+            }
         }
         //если нажали на подложку и все что в ней,
         // то запускаем toggle
