@@ -17,6 +17,8 @@ togglePopUp(document.querySelectorAll('.discount-btn'),
 togglePopUp(document.querySelector('.consultation-btn'),
             document.querySelector('.popup-consultation'));
 
+togglePopUp(document.querySelector('.check-btn'),
+            document.querySelector('.popup-check'));
 
 sendForm();
 validationForm();

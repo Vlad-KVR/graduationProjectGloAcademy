@@ -32,35 +32,16 @@ const sendForm = () => {
             //добавляем сообщение о загрузке
             form.insertAdjacentHTML('beforeend',loadMessage);
             
-            //собираем данные с формы
+            //собираем данные с форм
             const form2 = document.querySelector(`form[name=${form.dataset.form2}]`);
             const formData = new FormData(form);
 
+            //если 2 форма существует, то
+            // добавляем ее в formData
             if (form2) {
                 const formData2 = new FormData(form2);
                 formData2.forEach((val, key) => formData.append(key,val));
             }
-            
-            //если существует 2 форма, то
-            //то записываем ее в formData2
-
-            // if (form.dataset.form2) {
-            //     formData.append(
-            //             document.querySelector(`form[name="${form.dataset.form2}]`));
-            // }
-
-            // let body = {};
-
-            // //переводим в обьект
-            // formData.forEach((val, key) => {
-            // 	body[key] = val;
-            // });
-            // if (formData2) {
-            //     formData2.forEach((val, key) => {
-            //         body[key] = val;
-            //     });
-            // }
-
 
             //вызов отправки и передаем обьект
             postData(formData)
