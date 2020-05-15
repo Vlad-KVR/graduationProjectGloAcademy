@@ -83,7 +83,7 @@ const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
             if (callBtn.length) {
                 callBtn.forEach(item => item.addEventListener('click', toggle));
             } else {
-                callBtn.addEventListener('click', toggle)
+                callBtn.addEventListener('click', toggle);
             }
         }
         //если нажали на подложку и все что в ней,

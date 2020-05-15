@@ -5,6 +5,7 @@
 import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import validationForm from './modules/validationForm';
+import showMoreContent from './modules/showMoreContent';
 
 
 togglePopUp(document.querySelectorAll('.call-btn'),
@@ -22,4 +23,6 @@ togglePopUp(document.querySelector('.check-btn'),
 
 sendForm();
 validationForm();
-
+showMoreContent(document.querySelector('.add-sentence-btn'),
+                document.querySelector('.sentence')
+                    .querySelector('.row').childNodes);
