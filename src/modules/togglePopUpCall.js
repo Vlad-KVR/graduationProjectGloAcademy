@@ -1,5 +1,5 @@
 //переключаем попап
-const togglePopUp = () => {
+const togglePopUpCall = () => {
     //получаем кнопку, попап с подложкой и просто попап окно
     const callBtn = document.querySelectorAll('.call-btn'),
         popupCall = document.querySelector('.popup-call'),
@@ -13,7 +13,7 @@ const togglePopUp = () => {
         }
         //если попап активен то движение начинаем
         //с середины, иначе слева 
-        popupContent.style.marginLeft = popupCall.style.display === 'block' ? '2%' : '-100%';
+        popupContent.style.marginLeft = popupCall.style.display === 'block' ? '4%' : '-100%';
         popupCall.style.display = 'block';
 
         //сама анимация
@@ -32,7 +32,7 @@ const togglePopUp = () => {
             //убираем процент, что бы осталось только число
             const number = popupContent.style.marginLeft.slice(0,-1);
             //прибавляем к марджину 2%
-            popupContent.style.marginLeft = (+number + 2) + '%';
+            popupContent.style.marginLeft = (+number + 4) + '%';
             //запускаем анимацию опять
             requestAnimationFrame(animateContent);
 
@@ -47,7 +47,6 @@ const togglePopUp = () => {
         popupCall.removeEventListener('click', toggle, false);
 
         //отменяем обычное поведение
-        event.preventDefault();
         let target = event.target;
         //если нажата не кнопка и не номер,
         // то делаем всплытие до popup-content 
@@ -59,6 +58,7 @@ const togglePopUp = () => {
         //если таргет не пустой и это не popu-content,
         // то запускаем анимацию
         if (!target || !target.classList.contains('popup-content')) {
+            event.preventDefault();
             animationPopUp();
         }
         //через полторы секунды вешаем слушатель
@@ -71,4 +71,4 @@ const togglePopUp = () => {
     popupCall.addEventListener('click', toggle, false);
 };
 
-export default togglePopUp;
+export default togglePopUpCall;

@@ -1,6 +1,11 @@
 'use strict';
 
 
-import togglePopUp from './modules/togglePopUp';
+import togglePopUpCall from './modules/togglePopUpCall';
+import sendForm from './modules/sendForm';
+import validationForm from './modules/validationForm';
 
-togglePopUp();
+togglePopUpCall();
+sendForm();
+validationForm();
+
