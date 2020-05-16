@@ -10,12 +10,12 @@ const sendForm = () => {
 
 
     //отправка данных на сервер
-    const postData = formData => fetch('../server.php', {
+    const postData = body => fetch('../server.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'form/multipart'
+                'Content-Type': 'application/json'
             },
-            body: formData
+            body: JSON.stringify(body)
         });
     
     //цикл по всем формам
@@ -43,8 +43,14 @@ const sendForm = () => {
                 formData2.forEach((val, key) => formData.append(key,val));
             }
 
+            let body = {};
+
+            formData.forEach((val, key) => {
+            	body[key] = val;
+            });
+
             //вызов отправки и передаем обьект
-            postData(formData)
+            postData(body)
                 //если получилось
                 .then(response => {
                     if (response.status !== 200) {

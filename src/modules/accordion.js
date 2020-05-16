@@ -61,7 +61,9 @@ const accordion = (container) => {
     };
     //отменяет обычное поведение
     const preventDefault = () => {
-        event.preventDefault();
+        if (event.target.closest('.panel-heading')) {
+            event.preventDefault();
+        }
     };
     //переключает на новый лист
     const toggle = () => {
