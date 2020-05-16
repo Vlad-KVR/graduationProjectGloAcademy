@@ -6,6 +6,7 @@ import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import validationForm from './modules/validationForm';
 import showMoreContent from './modules/showMoreContent';
+import accordion from './modules/accordion';
 
 
 togglePopUp(document.querySelectorAll('.call-btn'),
@@ -26,3 +27,6 @@ validationForm();
 showMoreContent(document.querySelector('.add-sentence-btn'),
                 document.querySelector('.sentence')
                     .querySelector('.row').childNodes);
+
+accordion(document.querySelector('.questions > .container'));
+accordion(document.querySelector('.constructor > .container'));

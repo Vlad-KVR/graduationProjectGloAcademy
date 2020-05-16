@@ -1,5 +1,4 @@
 const showMoreContent = (moreBtn, content, clases = ['hidden', 'visible-sm-block']) => {
-    console.log(content);
     const showContent = () => {
         content.forEach(element => {
             if (element.classList) {

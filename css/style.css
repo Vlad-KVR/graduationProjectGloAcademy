@@ -830,7 +830,8 @@ header .logo img {
 
 .questions .panel-default {
     border-radius: 10px;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .questions .panel-heading {
@@ -841,7 +842,6 @@ header .logo img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px
 }
-
 .questions .panel-title {
     font-family: 'MuseoSansCyrl_med', sans-serif;
     font-size: 1.6rem
@@ -849,14 +849,21 @@ header .logo img {
 
 .questions .panel-body {
     font-family: 'MuseoSansCyrl_reg', sans-serif;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+
 }
+.collapse{
+    overflow: hidden;
+}
+
 
 .flex-center {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -1451,12 +1458,13 @@ header .logo img {
     }
 
     .constructor .panel-group .panel-body .type-septic {
-        margin-left: 1.5rem
+        margin-left: 1.5rem;
     }
 
     .constructor .panel-group .panel-body .onoffswitch {
-        margin-left: 2.5rem
+        margin-left: 2.5rem;
     }
+
 
     .sentence h2 {
         font-size: 2.3rem
