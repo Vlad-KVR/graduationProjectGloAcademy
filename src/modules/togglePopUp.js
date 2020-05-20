@@ -1,6 +1,11 @@
 const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
             //получаем кнопку, попап с подложкой и просто попап окно
             const popupContent = popupSubstrate.querySelector('.popup-content');
+
+        //забываем что существовал дополнительный обьект
+        const removeSecondObject = () => {
+            popupContent.querySelector('form').dataset.calculator = 'false';
+        }; 
         //анимация попап окна
         const animationPopUp = () => {
             //если маленький экран, то просто показываем без анимации
@@ -20,8 +25,10 @@ const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
                 if (popupContent.style.marginLeft === '0%' ||
                 popupContent.style.marginLeft === '100%') {
                     //если окно справа, то скрываем попап
+                    //и забываем дополнительный обьект, если он есть
                     if (popupContent.style.marginLeft === '100%') {
                         popupSubstrate.style.display = '';
+                        removeSecondObject();
                     }
     
                     return;
@@ -32,17 +39,23 @@ const togglePopUp = (callBtn, popupSubstrate, wrapper) => {
                 popupContent.style.marginLeft = (+number + 4) + '%';
                 //запускаем анимацию опять
                 requestAnimationFrame(animateContent);
-    
             };
             //первый запуск анимации
             animateContent();
         };
+
         //скрываем или показываем попап
         const toggle = event => {
             //забываем событие, что бы вовремя анимации
             //оно не запускалось
             popupSubstrate.removeEventListener('click', toggle, false);
-    
+
+            //если кнопка содержит data-calculator,
+            //то добавляем форме data-calculator = 'true'
+            if (event.target.hasAttribute('data-calculator')) {
+                popupContent.querySelector('form').dataset.calculator = 'true';
+            }
+
             //отменяем обычное поведение
             let target = event.target;
             //если нажата не кнопка и не номер,

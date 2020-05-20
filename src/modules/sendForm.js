@@ -1,5 +1,5 @@
 //отправка формы
-const sendForm = () => {
+const sendForm = (calculator) => {
     //оповещения загрузки,успешной отправки и ошибки
     const errorMessage = `<div class="sendError">Что-то пошло не так</div>`,
         loadMessage = `<div class="wrapper__lds-ellipsis"><div class="lds-ellipsis">
@@ -32,8 +32,10 @@ const sendForm = () => {
             //добавляем сообщение о загрузке
             form.insertAdjacentHTML('beforeend',loadMessage);
             
-            //собираем данные с форм
+            //собираем данные с форм о калькулятора
             const form2 = document.querySelector(`form[name=${form.dataset.form2}]`);
+            const objCalculator = form.hasAttribute('data-calculator') && form.dataset.calculator === 'true' ?
+                                    calculator.toString() : undefined;
             const formData = new FormData(form);
 
             //если 2 форма существует, то
@@ -48,7 +50,10 @@ const sendForm = () => {
             formData.forEach((val, key) => {
             	body[key] = val;
             });
-
+            //если калькулятор существует, то добавляем его в body
+            if (objCalculator) {
+                body['CalcObject'] = objCalculator;
+            }
             //вызов отправки и передаем обьект
             postData(body)
                 //если получилось

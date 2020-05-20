@@ -153,7 +153,7 @@
                                 </div>
                                 <img class="type-septic" src="img/constructor/type-septic-two.png" alt="septic">
                                 <p>камерный</p>
-                                <a class="button construct-btn collapsed" data-toggle="collapse"
+                                <a class="button construct-btn collapsed" data-toggle="collapse" data-next="headingTwo"
                                    data-parent="#accordion" href="#collapseTwo"><span>Следующий шаг</span></a>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                         <option>3 штуки</option>
                                     </select>
                                 </div>
-
+                                <div class="second-well">
                                 <div class="title-text">второй колодец (дренажный)</div>
                                 <div class="select-box">
                                     <p><strong>Диаметр</strong></p>
@@ -205,7 +205,8 @@
                                         <option>3 штуки</option>
                                     </select>
                                 </div>
-                                <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion"
+                                </div>
+                                <a class="button construct-btn" data-toggle="collapse" data-next="headingThree" data-parent="#accordion"
                                    href="#collapseThree"><span>Следующий шаг</span></a>
                             </div>
                         </div>
@@ -235,7 +236,8 @@
                                 </div>
                                 <img class="bottom-septic-img" src="img/constructor/bottom-septic.png" alt="bs">
                                 <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><span>Следующий шаг</span></a>
+                                data-next="headingFour" href="#collapseFour" aria-expanded="false" 
+                                   aria-controls="collapseFour"><span>Следующий шаг</span></a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +256,7 @@
                             <div class="panel-body">
                                 <p>Введите расстояние до дома</p>
                                 <input type="text">
-                                <button class="button construct-btn call-btn">Получить расчет и скидку</button>
+                                <button class="button construct-btn call-btn" data-calculator = 'true'>Получить расчет и скидку</button>
                             </div>
                         </div>
                     </div>
@@ -563,8 +565,7 @@
         </div>
     </div>
 </div>
-
-
+.construct-btn
 <script src="./dist/main.js"></script>
 </body>
 </html>
